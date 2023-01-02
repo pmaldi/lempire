@@ -1,0 +1,42 @@
+<body>
+{{> mainContainer}}
+</body>
+
+
+<template name="mainContainer">
+    <div class="app">
+        <header>
+            <div class="app-bar">
+                <div class="app-header">
+                    <h1>Systeme d'export</h1>
+                </div>
+            </div>
+        </header>
+
+        <div class="main">
+            {{> form }}
+            <ul class="exports">
+                <table style="width: 100%; text-align: center">
+                <tr>
+                    <th>Reférence de l'export</th>
+                    <th>Etat d'avancement</th>
+                    <th>Lien</th>
+                    <th>Suppression de l'export</th>
+                </tr>
+                {{#each exports}}
+                    <tr>
+                        {{> export}}
+                    </tr>
+                {{/each}}
+                </table>
+
+            </ul>
+        </div>
+    </div>
+</template>
+
+<template name="form">
+    <form class="export-form">
+        <button type="submit">Export</button>
+    </form>
+</template>
