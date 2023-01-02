@@ -7,14 +7,15 @@ import './Exports.html';
 Template.export.onCreated(function () {
   const percent = Template.instance().data.percent;
   const id = Template.instance().data._id;
-  const instance = this;
 
   this.progress = new ReactiveVar(percent);
 
+  /* It's a function that will run every second. */
   this.runEverySecond = setInterval(() => {
     const this_element = document.getElementById(id);
     if (this.progress.get() < 100 && this_element) {
       this.progress.set(this.progress.get() + 5);
+      /* It's updating the document with the given id. */
       ExportsCollection.update(id, {
         $set: {
           percent: this.progress.get(),
@@ -24,6 +25,7 @@ Template.export.onCreated(function () {
     }
     if (this.progress.get() == 100 && this_element) {
       clearInterval(this.runEverySecond);
+      /* It's updating the document with the given id. */
       ExportsCollection.update(id, {
         $set: {
           link: randomLink(),
