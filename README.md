@@ -1,5 +1,7 @@
 <h1 align="center">Welcome to TestLempire 👋</h1>
 
+![Preview](https://i.imgur.com/TusEEvb.png)
+
 > This project is a technical test for Lempire company, the initial request is: Using Meteor.js with Blaze as the front-end framework, create a list of exports that meets the following rules:
 
 <p>The page must display a "Export" button that starts a new export asynchronously<br>
